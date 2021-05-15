@@ -1,0 +1,82 @@
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+\usepackage{graphicx,url}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}  
+
+     
+\sloppy
+
+\title{Revisão Bibliográfica}
+
+\begin{document} 
+
+\maketitle
+
+\begin{abstract}
+This work aims to carry out a bibliographic review on some articles related to the main theme of the project to be developed. The articles are organized in a table where they are described for which platform they were designed, which tool was used to implement the chatbot and what the main objective of the project is.
+\end{abstract}
+     
+\begin{resumo} 
+Este trabalho tem como objetivo realizar uma revisão bibliográfica sobre alguns artigos relacionados ao tema principal do projeto a ser desenvolvido. Os artigos são organizados em uma tabela onde são descritas para qual plataforma foram projetados, que ferramenta foi utilizada para implementar o chatbot e qual o objetivo principal do projeto.
+\end{resumo}
+
+
+\section{Introdução}
+
+{\itshape Chatbots} (do inglês {\itshape chat robots}, ou “robôs de conversação”) são agentes de conversação ou aplicativos inteligentes que simulam a conversação como se fossem seres humanos \cite{lucchesi:18}. Atualmente, {\itshape chatbots} são muito utilizados em empresas para auxiliar na comunicação, em trocas e devoluções de produtos e atendimento aos clientes, mas seu uso não se limita somente para o ramo empresarial.
+
+Qualquer pessoa pode criar um {\itshape chatbot} para conversar, gerenciar informações e executar operações, realizar pesquisas de opinião, jogar ou até mesmo controlar dispositivos de Internet das Coisas (IoT, na sigla em inglês {\itshape Internet of Things}).
+
+Tendo em vista suas diversas aplicações, foi planejado a utilização de um {\itshape chatbot} no meio acadêmico com o intuito de responder algumas das dúvidas mais frequentes do corpo discente da instituição.
+
+\section{ Referencial Teórico}
+
+O trabalho elaborado em \cite{maciel:19} realiza uma pesquisa entre diversas plataformas disponíveis para escolher aquela que melhor se adequa às especificidades do projeto e a partir disso definem uma plataforma para implementar Maciel, um {\itshape chatbot} para ser utilizado na Universidade Federal do Ceará (UFC) campus Russas. O chatbot foi criado com a ferramenta {\itshape Dialogflow} e integrado ao aplicativo de mensagens {\itshape Whatsapp}, recebendo uma avaliação positiva entre os usuários e melhorias após os testes iniciais.
+
+O trabalho realizado por \cite{bulhoes:20} propõe a criação de um {\itshape chatbot} para auxiliar estudantes no processo de interpretação textual. O agente conversacional é implementado com uma interface gráfica em Java, realizando perguntas a partir de um texto que é exibido ao leitor. O programa faz uso de um interpretador para processar o texto digitado pelo usuário e consultar a melhor resposta na base de dados. Dentre os 50 alunos que utilizaram o programa, 48 afirmaram que as perguntas feitas pelo {\itshape chatbot} contribuíram de forma relevante para o entendimento do texto.
+
+
+O projeto em \cite{lucchesi:18} apresenta a criação do agente conversacional “Metis”, projetado para conversar com alunos como apoio às atividades de educação à distância. Foi realizado um estudo qualitativo acerca do funcionamento dos {\itshape chatbots} e seu potencial uso na educação. A implementação do agente utilizou o sistema A.L.I.C.E. no qual organiza a base de conhecimento em XML. A análise dos resultados mostrou que houve um aumento, ainda que moderado, da média geral alcançada pelas turmas que utilizaram o agente para auxiliar seus estudos.
+
+O trabalho de \cite{araujo:20} propõe o desenvolvimento de um {\itshape chatbot} para responder perguntas/dúvidas de alunos da disciplina de estrutura de dados, seguindo a ementa definida para a disciplina ministrada na Universidade Federal do Ceará - Campus Russas. Foi desenvolvido um website, um serviço em Java para permitir a comunicação entre o site e o serviço Watson da IBM, e a manutenção das lógicas de diálogo e informações pelo {\itshape Watson Assistant}. Apesar da maioria dos usuários declarar que o sistema apresenta dificuldades de uso, cerca de 76,8\% dos alunos  vêem benefícios na utilização de um {\itshape chatbot} para auxiliar suas atividades   .
+
+O trabalho proposto em \cite{catbot:19} tem como intuito desenvolver um {\itshape chatbot} para o meio acadêmico, visando facilitar e tornar mais rápido o acesso às informações mais relevantes relacionadas ao Instituto de Computação e seus cursos, em especial ao curso de Sistemas de Informação. Foi criada uma personalidade e interface gráfica para o {\itshape chatbot}. Além disso, foi utilizado o {\itshape Watson Assistant} para processar a lógica de respostas da aplicação, assim como executar os testes com os usuários. O programa teve uma boa recepção dos usuários, que ofereceram diversas sugestões para melhorar o projeto.
+
+A Tabela 1 relaciona os trabalhos analisados com suas principais carcterísticas de desenvolvimento de {\itshape chatbots}. A utilização dos {\itshape chatbots} possuem objetivos "educacionais" quando são projetados para auxiliar os estudos dos estudantes em uma determinada disciplina, e "orientações" quando o objetivo é fornecer informações acerca do espaço acadêmico.
+
+\begin{table}[h!]
+\caption{Tabela de referências}
+\label{table:1}
+\begin{tabular}{ |p{3cm}||p{3cm}|p{3cm}|p{3cm}|  }
+ \hline
+Autor & Plataforma & Ferramenta & Utilização\\
+ \hline
+ \cite{araujo:20}   & Web    & {\itshape Watson Assistant} &   educacional\\
+ \cite{bulhoes:20}&   Desktop  & {\itshape Program AB}   & educacional\\
+ \cite{catbot:19} & Web & {\itshape Watson Assistant} &  orientações\\
+ \cite{lucchesi:18}    & Web & A.L.I.C.E. & educacional\\
+ \cite{maciel:19}  & Mobile  & {\itshape Dialogflow} & orientações\\
+ \hline
+\end{tabular}
+\end{table}
+
+
+
+%\section{Materiais e Métodos} \label{sec:firstpage}
+
+%[...]
+
+%\section{Resultados e discussões}
+
+%[...]
+
+%\section{Considerações Finais} 
+%[...]
+
+\bibliographystyle{sbc}
+\bibliography{bibliot}
+
+\end{document}
