@@ -4,12 +4,11 @@
 \usepackage{graphicx,url}
 \usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}
-\usepackage[latin1]{inputenc}  
-
+\usepackage[latin1]{inputenc} 
      
 \sloppy
 
-\title{Revisão Bibliográfica}
+\title{Aplicação de Sistema Embarcado Linux em Chatbot Acadêmico}
 
 \begin{document} 
 
@@ -66,14 +65,18 @@ O cronograma para a implementação do projeto será dividido em semanas, concen
  \hline
 Atividade & Período\\
  \hline
- Coleta e classificação de perguntas frequentes & 25/06/21 a 27/06/21  \\
- Elaboração do questionário & 02/07/21 a 04/07/21  \\
- Aplicação do questionário & 05/07/21 a 12/07/21  \\
- Análise dos resultados & 12/07/21 a 16/07/21  \\
- Elaboração do banco de perguntas & 16/07/21 a 18/07/21  \\
- Definição das respostas do {\itshape bot} & 16/07/21 a 18/07/21  \\
- Evolução do código & 19/07/21 a 23/07/21 \\
- Testes do sistema & 23/07/21 a 25/07/21  \\
+ Coleta e classificação de perguntas frequentes & 25/06/21 a 04/07/21  \\
+ Elaboração do questionário: uso de chatbots & 04/07/21 a 16/07/21  \\
+ Aplicação do questionário & 16/07/21 a 23/07/21  \\
+ Análise dos resultados & 23/07/21 a 24/07/21  \\
+ Elaboração do questionário: uso do aplicativo & 24/07/21 a 31/07/21  \\
+ Aplicação do questionário & 31/07/21 a 07/08/21  \\
+ Análise dos resultados & 08/08/21 a 09/08/21  \\
+ Elaboração do banco de perguntas & 09/08/21 a 23/08/21  \\
+ Definição das respostas do {\itshape bot} & 23/08/21 a 06/09/21  \\
+ Evolução do código & 06/09/21 a 06/10/21 \\
+ Testes do sistema & 06/10/21 a 20/10/21  \\
+ Refatoração do código e correção de bugs & 22/10/21 a 05/11/21\\
  \hline
 \end{tabular}
 \end{table}
@@ -91,7 +94,7 @@ O trabalho de \cite{araujo:20} propõe o desenvolvimento de um {\itshape chatbot
 
 O trabalho proposto em \cite{catbot:19} tem como intuito desenvolver um {\itshape chatbot} para o meio acadêmico, visando facilitar e tornar mais rápido o acesso às informações mais relevantes relacionadas ao Instituto de Computação e seus cursos, em especial ao curso de Sistemas de Informação. Foi criada uma personalidade e interface gráfica para o {\itshape chatbot}. Além disso, foi utilizado o {\itshape Watson Assistant} para processar a lógica de respostas da aplicação, assim como executar os testes com os usuários. O programa teve uma boa recepção dos usuários, que ofereceram diversas sugestões para melhorar o projeto.
 
-A Tabela 1 relaciona os trabalhos analisados com suas principais carcterísticas de desenvolvimento de {\itshape chatbots}. A utilização dos {\itshape chatbots} possuem objetivos "educacionais" quando são projetados para auxiliar os estudos dos estudantes em uma determinada disciplina, e "orientações" quando o objetivo é fornecer informações acerca do espaço acadêmico.
+A Tabela 2 relaciona os trabalhos analisados com suas principais carcterísticas de desenvolvimento de {\itshape chatbots}. A utilização dos {\itshape chatbots} possuem objetivos "educacionais" quando são projetados para auxiliar os estudos dos estudantes em uma determinada disciplina, e "orientações" quando o objetivo é fornecer informações acerca do espaço acadêmico.
 
 \begin{table}[h!]
 \caption{Trabalhos similares e principais características}
@@ -109,10 +112,9 @@ Autor & Plataforma & Ferramenta & Utilização\\
 \end{tabular}
 \end{table}
 
+\section{Materiais e Métodos} \label{sec:firstpage}
 
-
-
-%\section{Materiais e Métodos} \label{sec:firstpage}
+Para construir o banco de palavras, foi realizado um estudo sobre perguntas frequentes relacionadas a assuntos acadêmicos que estudantes realizavam no aplicativo de mensagens Whatsapp entre os meses de janeiro e junho de 2021. As conversas de um grupo de avisos com cerca de 245 membros foi utilizado para construir a base de respostas padrões do chatbot.
 
 %[...]
 
