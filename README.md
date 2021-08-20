@@ -45,4 +45,6 @@ Ana Carolina Silva Abreu - ana.carolina.silva05@aluno.ifce.edu.br
 
 Erik Jhones Freitas do Nascimento - erik.jhones06@aluno.ifce.edu.br
 
+Filipe de Almeida Lira - filipe.almeida.lira04@aluno.ifce.edu.br
+
 Sandro César Silveira Jucá - sandrojuca@ifce.edu.br
