@@ -15,112 +15,138 @@
 \maketitle
 
 \begin{abstract}
-This work aims to carry out a bibliographic review on some articles related to the main theme of the project to be developed. The articles are organized in a table where they are described for which platform they were designed, which tool was used to implement the chatbot and what the main objective of the project is.
+Communication and information transmission barriers are frequently observed in higher education institutions. Conversational agents aimed at serving students can be used to overcome these problems, but there are still many universities that haven't joined the technology. This study addresses the challenges faced by students in educational institutions and presents “Kinho”, a chatbot that guides its users about the functioning of the academic space at X\textsuperscript{1} institution. “Kinho” was developed to run on an embedded system based on the Raspberry Pi and uses NLP concepts to communicate with the user. Testing experiments with the system showed a great acceptance of the solution by the internal academic community.
 \end{abstract}
      
 \begin{resumo} 
-Este trabalho tem como objetivo realizar uma revisão bibliográfica sobre alguns artigos relacionados ao tema principal do projeto a ser desenvolvido. Os artigos são organizados em uma tabela onde são descritas para qual plataforma foram projetados, que ferramenta foi utilizada para implementar o chatbot e qual o objetivo principal do projeto.
+Frequentemente é observado barreiras de comunicação e transmissão de informações nas instituições de ensino superior. Agentes conversacionais voltados ao atendimento aos alunos podem ser utilizados para superar esses problemas, mas ainda existem muitas universidades que não aderiram à tecnologia. Neste estudo são abordados os desafios enfrentados pelos estudantes nas instituições de ensino e é apresentado “Kinho”, um chatbot que orienta seus usuários sobre o funcionamento do espaço acadêmico da instituição X\footnote{O nome da instituição foi omitido por causa do processo de revisão cega do evento.}. “Kinho” foi desenvolvido para ser executado em um sistema embarcado baseado no Raspberry Pi e utiliza conceitos de NLP para realizar a comunicação com o usuário. Experimentos de testes com o sistema mostraram uma grande aceitação da solução por parte da comunidade acadêmica interna.
 \end{resumo}
 
 
 \section{Introdução}
 
-A cada novo semestre, alunos novatos ingressam em uma instituição de ensino superior e encontram um ambiente educacional com estruturas diferentes do que estão acostumados. É muito comum que estudantes possam se sentir desinformados sobre o funcionamento do novo ambiente e busquem orientações de terceiros. 
+A cada novo semestre, alunos novatos ingressam em uma instituição de ensino superior e encontram um ambiente educacional com estruturas diferentes do que estão acostumados. De acordo com \cite{torres:21} houve uma diversificação social na população que passou a frequentar a universidade, em que é observado o ingresso de estudantes de famílias de baixa renda, muitas vezes os primeiros de sua família a frequentar a universidade. Esses estudantes encontram um período de adaptação ao ensino superior muito mais significativo, pois vários deles ingressam sem as competências ou recursos necessários para frequentar a universidade, assim como não costumam compartilhar da cultura dos membros da instituição. 
 
-Entretanto, os alunos acabam recorrendo a grupos de aplicativos de {\itshape chat} para obter informações não oficiais, muitas vezes desobedecendo regras gerais do grupo ou até mesmo não conseguindo ingressar por conta de um limite máximo de usuários ou não obtenção do {\itshape link} de acesso. Além disso, as perguntas dos estudantes costumam ser repetitivas e possuem um certo padrão, o que permite buscar uma solução para automatizar esse processo.
+É muito comum que estudantes sintam-se desinformados sobre o funcionamento do novo ambiente e busquem orientações de terceiros. Geralmente são os estudantes de classes sociais menos favorecidas que mais necessitam de acolhimento institucional e psicopedagógico por parte dos professores e colegas, mas são os que mais carecem dessa atenção especial para se aproximar da nova realidade do ensino superior \cite{torres:21}.
 
-{\itshape Chatbots} (do inglês {\itshape chat robots}, ou “robôs de conversação”) são agentes de conversação ou aplicativos inteligentes que simulam a conversação como se fossem seres humanos \cite{lucchesi:18}. Atualmente, {\itshape chatbots} são muito utilizados em empresas para auxiliar na comunicação, em trocas e devoluções de produtos e atendimento aos clientes, mas seu uso não se limita somente para o ramo empresarial. Qualquer pessoa pode criar um {\itshape chatbot} para conversar, gerenciar informações e executar operações, realizar pesquisas de opinião, jogar ou até mesmo controlar dispositivos de Internet das Coisas (IoT, na sigla em inglês {\itshape Internet of Things}).
+Com base em um levantamento interno realizado pelos autores na instituição X\textsuperscript{1} através da aplicação de um questionário utilizando o serviço de formulários do {\itshape Google}, foi observado que muitos alunos recorrem a grupos de aplicativos de {\itshape chat} para obter informações não oficiais, muitas vezes desobedecendo regras gerais do grupo ou até mesmo não conseguindo ingressar por conta de um limite máximo de usuários ou não obtenção do {\itshape link} de acesso. Além disso, as perguntas dos estudantes costumam ser repetitivas e possuem um certo padrão, o que permite buscar uma solução para automatizar o processo de atendimento.
 
-Tendo em vista suas diversas aplicações, foi planejado a utilização de um {\itshape chatbot} no meio acadêmico com o intuito de responder algumas das dúvidas mais frequentes do corpo discente da instituição. É esperado que o uso dessa aplicação diminua a dependência do estudante para recorrer a grupos de {\itshape chat} e servidores para obter informações repetitivas, além de facilitar a comunicação do estudante por canais oficiais de comunicação.
+{\itshape Chatbots} (do inglês {\itshape chat robots}, ou “robôs de conversação”) são agentes de conversação ou aplicativos inteligentes que simulam a conversação como se fossem seres humanos \cite{lucchesi:18}. {\itshape Chatbots} podem ser utilizados em empresas para auxiliar na comunicação, em trocas e devoluções de produtos e atendimento aos clientes \cite{correia:19} \cite{valente:20}, mas seu uso não se limita somente ao ramo empresarial.
 
-O objetivo geral do projeto é a elaboração de um {\itshape chatbot} voltado para responder perguntas frequentes e tirar dúvidas de estudantes da instituição de ensino. Os objetivos específicos são: 
+Qualquer pessoa pode criar um {\itshape chatbot} para conversar, gerenciar informações e executar operações, realizar pesquisas de opinião, jogar ou até mesmo controlar dispositivos de Internet das Coisas (IoT, na sigla em inglês para {\itshape Internet of Things}). Entretanto, não é fácil incorporar sentimentos a eles, o que pode distanciá-los da humanização pretendida. Além disso, certos projetos exigem um elevado grau de conhecimento e é difícil encontrar especialistas na área, o que pode tornar a implementação de chatbots complicada e elevar custos \cite{guerreiro:19}.
 
+Tendo em vista suas diversas aplicações e a problemática recorrente enfrentada pela instituição X\textsuperscript{1} com relação à obtenção de informações pelos novos alunos, foi desenvolvido e testado um {\itshape chatbot} para o meio acadêmico com o intuito de responder algumas das dúvidas mais frequentes do corpo discente da instituição X\textsuperscript{1}. A escolha da elaboração de um chatbot é baseada nos estudos de sistemas similares \cite{araujo:20} \cite{bulhoes:20} \cite{lucchesi:18} \cite{maciel:19} \cite{silva:21} em que foi observado uma boa resposta de estudantes e servidores no uso de {\itshape chatbots} voltados para o meio acadêmico, seja no campo educacional ou em orientações acerca do funcionamento da instituição de ensino.
 
-\begin{itemize}
-  \item Realizar um levantamento acerca das perguntas mais frequentes em grupos de {\itshape chat} acadêmico;
-  \item Implementação de um chatbot utilizando a linguagem Python;
-  \item Criação de uma identidade visual para o {\itshape bot}, assim como definição de características de personalidade para o mesmo;
-  \item Embarcar o programa em um Raspberry Pi.
-\end{itemize}
+A lógica de programação e interface gráfica do agente conversacional “Kinho” foram implementadas na linguagem Python, e o sistema foi embarcado em um Raspberry Pi (Rpi). A utilização de um sistema embarcado tem como objetivo reutilizar estruturas eletrônicas ociosas no campus ({\itshape totens}) que já estão equipadas com os monitores e teclados necessários para o funcionamento do sistema. No entanto, as novas restrições impostas pela instituição X\textsuperscript{1} para impedir a disseminação do novo Coronavírus impediram que os testes práticos nos {\itshape totens} fossem executados.
 
-A hipótese levantada é que {\itshape chatbots} poderiam orientar os alunos acerca de assuntos voltados ao espaço acadêmico. Os estudantes poderiam recorrer aos mesmos para responder perguntas ao qualquer momento, sem a exigência de seguir regras de moderação ou cadastro em {\itshape softwares} ou {\itshape sites} específicos.
-
-A justificativa para essa hipótese é o estudo de sistemas similares que obtiveram uma boa resposta de estudantes e servidores no uso de {\itshape chatbots} voltados para o meio acadêmico, seja no campo educacional ou em orientações acerca do funcionamento da instituição. Os projetos desenvolvidos oferecem espaço para evolução das aplicações, assim como a exploração do Raspberry Pi como ferramenta para criação de agentes conversacionais.
-
-\section{ Método de Pesquisa }
-
-Para construir a base de informações que será utilizada pelo {\itshape bot}, será realizada uma pesquisa quantitativa em duas etapas acerca das principais dúvidas entre os estudantes da instituição. A primeira etapa consiste na coleta e classificação das perguntas mais frequentes em um grupo de {\itshape chat} do aplicativo de mensagens {\itshape Whatsapp} durante um determinado período de tempo. Essa classificação levará em consideração o período do semestre vigente na instituição.
-
-A segunda etapa é composta pela aplicação de um questionário para os estudantes. O objetivo desse questionário é o levantamento de informações acerca do curso em que o aluno está matriculado, o semestre que o mesmo está cursando e quais dúvidas são as mais frequentes dentro das categorias definidas na etapa anterior. Além disso, o questionário permitirá que o estudante adicione novas dúvidas relacionadas ao espeço acadêmico. Dessa forma, novas categorias de perguntas poderiam ser identificadas e acrescentadas à base de dados do {\itshape chatbot}.
-
-\section{Cronograma} \label{sec:firstpage}
-
-O cronograma para a implementação do projeto será dividido em semanas, concentrando-se na elaboração da pesquisa, evolução do protótipo e testes com a lógica de resposta do {\itshape chatbot}. A tabela 1 mostra o cronograma elaborado para a etapa de implementação e evolução do sistema, relacionando as principais atividades com o tempo estimado para realizar cada tarefa.
+Resultados experimentais demonstraram que o uso dessa aplicação diminuiu a dependência do estudante para recorrer a grupos de {\itshape chat} para obter informações repetitivas. Cerca de 82\% dos estudantes que participaram do teste afirmaram que utilizariam o chatbot para obter informações acadêmicas, 75\% afirmaram que o sistema facilita a comunicação do estudante com canais oficiais de comunicação e 89\% observaram a diminuição do tempo de resposta para tirar dúvidas relacionadas à instituição X\textsuperscript{1}.
 
 
-\begin{table}[h!]
-\caption{Cronograma}
-\label{table:1}
-\begin{tabular}{ |p{8cm}||p{6cm}|  }
- \hline
-Atividade & Período\\
- \hline
- Coleta e classificação de perguntas frequentes & 25/06/21 a 04/07/21  \\
- Elaboração do questionário: uso de chatbots & 04/07/21 a 16/07/21  \\
- Aplicação do questionário & 16/07/21 a 23/07/21  \\
- Análise dos resultados & 23/07/21 a 24/07/21  \\
- Elaboração do questionário: uso do aplicativo & 24/07/21 a 31/07/21  \\
- Aplicação do questionário & 31/07/21 a 07/08/21  \\
- Análise dos resultados & 08/08/21 a 09/08/21  \\
- Elaboração do banco de perguntas & 09/08/21 a 23/08/21  \\
- Definição das respostas do {\itshape bot} & 23/08/21 a 06/09/21  \\
- Evolução do código & 06/09/21 a 06/10/21 \\
- Testes do sistema & 06/10/21 a 20/10/21  \\
- Refatoração do código e correção de bugs & 22/10/21 a 05/11/21\\
- \hline
-\end{tabular}
-\end{table}
+\section{ Fundamentação Teórica}
 
-\section{ Referencial Teórico}
+O uso de {\itshape chatbots} foi amplamente utilizado para diversos fins, seja empresarial, acadêmico ou pessoal. No que diz respeito aos trabalhos voltados à utilização no meio acadêmico, alguns projetos mostraram resultados positivos e boa aceitação do público.
 
-O trabalho elaborado em \cite{maciel:19} realiza uma pesquisa entre diversas plataformas disponíveis para escolher aquela que melhor se adequa às especificidades do projeto e a partir disso definem uma plataforma para implementar Maciel, um {\itshape chatbot} para ser utilizado na Universidade Federal do Ceará (UFC) campus Russas. O chatbot foi criado com a ferramenta {\itshape Dialogflow} e integrado ao aplicativo de mensagens {\itshape Whatsapp}, recebendo uma avaliação positiva entre os usuários e melhorias após os testes iniciais.
+Os projetos de \cite{silva:21} e \cite{maciel:19},  respectivamente aplicados no Instituto Federal de Brasília e na Universidade Federal do Ceará (UFC) campus Russas, possuem o objetivo de auxiliar o corpo discente de suas instituições que buscam informações acerca do funcionamento do espaço acadêmico. O protótipo de {\itshape chatbot} implementado por \cite{silva:21} apresenta resultados promissores, alcançando 96,7\% de acurácia em seus resultados. O {\itshape chatbot} de \cite{maciel:19} foi criado com a ferramenta {\itshape Dialogflow} da {\itshape Google} e integrado ao aplicativo de mensagens {\itshape Whatsapp}, alcançando uma avaliação positiva entre os usuários.
 
-O trabalho realizado por \cite{bulhoes:20} propõe a criação de um {\itshape chatbot} para auxiliar estudantes no processo de interpretação textual. O agente conversacional é implementado com uma interface gráfica em Java, realizando perguntas a partir de um texto que é exibido ao leitor. O programa faz uso de um interpretador para processar o texto digitado pelo usuário e consultar a melhor resposta na base de dados. Dentre os 50 alunos que utilizaram o programa, 48 afirmaram que as perguntas feitas pelo {\itshape chatbot} contribuíram de forma relevante para o entendimento do texto.
+Outro trabalho com resultados promissores é o de \cite{araujo:20}. O autor detalha o desenvolvimento de um {\itshape chatbot} para responder perguntas/dúvidas de alunos da disciplina de estrutura de dados, seguindo a ementa definida para a disciplina ministrada na UFC campus Russas. Apesar da maioria dos usuários declarar que o sistema apresenta dificuldades de uso, cerca de 76,8\% dos alunos vêem benefícios na utilização de um {\itshape chatbot} para auxiliar suas atividades.
 
+Outros {\itshape chatbots} acadêmicos são utilizados como ferramentas de apoio ao ensino, como é o caso do trabalho de \cite{bulhoes:20}, em que  foi desenvolvido um {\itshape chatbot} para auxiliar estudantes no processo de interpretação textual. O agente conversacional é implementado com uma interface gráfica em Java, realizando perguntas a partir de um texto que é exibido ao leitor. Dentre os 50 alunos que utilizaram o programa, 48 afirmaram que as perguntas feitas pelo  {\itshape chatbot} contribuíram de forma relevante para o entendimento do texto. De maneira similar, o projeto em  \cite{lucchesi:18} apresenta a criação do agente conversacional “Metis”, projetado para conversar com alunos como apoio às atividades de educação a distância. A análise dos resultados mostrou que houve um aumento, ainda que moderado, da média geral alcançada pelas turmas que utilizaram o agente para auxiliar seus estudos.
 
-O projeto em \cite{lucchesi:18} apresenta a criação do agente conversacional “Metis”, projetado para conversar com alunos como apoio às atividades de educação à distância. Foi realizado um estudo qualitativo acerca do funcionamento dos {\itshape chatbots} e seu potencial uso na educação. A implementação do agente utilizou o sistema A.L.I.C.E. no qual organiza a base de conhecimento em XML. A análise dos resultados mostrou que houve um aumento, ainda que moderado, da média geral alcançada pelas turmas que utilizaram o agente para auxiliar seus estudos.
+A Tabela 1 relaciona os trabalhos anteriormente analisados com suas principais características de desenvolvimento de {\itshape chatbots}. A utilização dos {\itshape chatbots} possuem objetivos "educacionais" quando são projetados para auxiliar os estudos dos estudantes em uma determinada disciplina, e "orientações" quando o objetivo é fornecer informações acerca do espaço acadêmico.
 
-O trabalho de \cite{araujo:20} propõe o desenvolvimento de um {\itshape chatbot} para responder perguntas/dúvidas de alunos da disciplina de estrutura de dados, seguindo a ementa definida para a disciplina ministrada na Universidade Federal do Ceará - Campus Russas. Foi desenvolvido um {\itshape website}, um serviço em Java para permitir a comunicação entre o site e o serviço Watson da IBM, e a manutenção das lógicas de diálogo e informações pelo {\itshape Watson Assistant}. Apesar da maioria dos usuários declarar que o sistema apresenta dificuldades de uso, cerca de 76,8\% dos alunos  vêem benefícios na utilização de um {\itshape chatbot} para auxiliar suas atividades   .
-
-O trabalho proposto em \cite{catbot:19} tem como intuito desenvolver um {\itshape chatbot} para o meio acadêmico, visando facilitar e tornar mais rápido o acesso às informações mais relevantes relacionadas ao Instituto de Computação e seus cursos, em especial ao curso de Sistemas de Informação. Foi criada uma personalidade e interface gráfica para o {\itshape chatbot}. Além disso, foi utilizado o {\itshape Watson Assistant} para processar a lógica de respostas da aplicação, assim como executar os testes com os usuários. O programa teve uma boa recepção dos usuários, que ofereceram diversas sugestões para melhorar o projeto.
-
-A Tabela 2 relaciona os trabalhos analisados com suas principais carcterísticas de desenvolvimento de {\itshape chatbots}. A utilização dos {\itshape chatbots} possuem objetivos "educacionais" quando são projetados para auxiliar os estudos dos estudantes em uma determinada disciplina, e "orientações" quando o objetivo é fornecer informações acerca do espaço acadêmico.
-
-\begin{table}[h!]
+\begin{table}[h]
 \caption{Trabalhos similares e principais características}
 \label{table:1}
-\begin{tabular}{ |p{3cm}||p{3cm}|p{3cm}|p{3cm}|  }
+\begin{tabular}{ |p{3cm}|p{1.9cm}|p{2cm}|p{2.6cm}|p{3.4cm}|  }
  \hline
-Autor & Plataforma & Ferramenta & Utilização\\
+Autor & Plataforma & Utilização & Disponibilidade & Precisão das Respostas\\
  \hline
- \cite{araujo:20}   & Web    & {\itshape Watson Assistant} &   educacional\\
- \cite{bulhoes:20}&   Desktop  & {\itshape Program AB}   & educacional\\
- \cite{catbot:19} & Web & {\itshape Watson Assistant} &  orientações\\
- \cite{lucchesi:18}    & Web & A.L.I.C.E. & educacional\\
- \cite{maciel:19}  & Mobile  & {\itshape Dialogflow} & orientações\\
+ \cite{araujo:20}   & {\itshape Web}    & Educacional &   Somente testes & 46,5\% das respostas são parcialmente corretas\\
+  \hline
+ \cite{bulhoes:20}&   {\itshape Desktop}  & Educacional   & Código aberto & 32\% das respostas são corretas
+\\
+ \hline
+ \cite{silva:21} & {\itshape Mobile} & Orientações &  Somente testes & 96,7\% das respostas são corretas
+\\
+ \hline
+ \cite{lucchesi:18}    & {\itshape Web} & Educacional & Código aberto & 82\% das respostas são parcialmente corretas \\
+  \hline
+ \cite{maciel:19}  & {\itshape Mobile}  & Orientações & Somente testes & Não avaliada
+ \\
  \hline
 \end{tabular}
 \end{table}
+
+
+A partir do estudo dos sistemas similares foi possível observar uma boa recepção dos usuários aos {\itshape chatbots}. A maioria dos sistemas não é de código aberto e possui uma eficiência parcial no que se diz respeito à obtenção de respostas no sistema. Somente o trabalho de \cite{silva:21} conseguiu uma precisão satisfatória, mas os testes foram realizados com questionamentos automatizados por botões, o que afeta a proposta de simulação de conversas humanizadas oferecidas pelos {\itshape chatbots}.
+
+“Kinho” é um {\itshape chatbot} que oferece um sistema eficiente e humanizado para orientar os estudantes acerca do funcionamento da instituição de ensino superior, de código aberto e que explore as funcionalidades oferecidas pelo Raspberry Pi (Rpi). O Raspberry Pi OS (anteriormente chamado Raspbian) é atualmente o sistema operacional oficial para todos os modelos de Rpi. Muitas aplicações e módulos dedicados à programação já vêm incluídos na imagem do Raspberry Pi OS, bastando iniciar o sistema para acessá-las \cite{juca:18}.
+
+Projetos de sistemas embarcados em Rpi apresentam resultados promissores, como é o caso do trabalho de \cite{junior:19}. Os autores desenvolvem um sistema de confirmação de refeições do restaurante acadêmico do Instituto Federal de Educação, Ciência e Tecnologia do Ceará, oferecendo uma alternativa ao método de confirmação existente. 
 
 \section{Materiais e Métodos} \label{sec:firstpage}
 
-Para construir o banco de palavras, foi realizado um estudo sobre perguntas frequentes relacionadas a assuntos acadêmicos que estudantes realizavam no aplicativo de mensagens Whatsapp entre os meses de janeiro e junho de 2021. As conversas de um grupo de avisos com cerca de 245 membros foi utilizado para construir a base de respostas padrões do chatbot.
+O chatbot “Kinho” possui três componentes principais: base de dados, processamento das requisições e interface com o usuário, exibida na Figura 2 na seção Resultados e Discussões. Para construir a base de dados foi realizado um estudo sobre perguntas frequentes relacionadas a assuntos acadêmicos que estudantes realizavam no aplicativo de mensagens {\itshape Whatsapp} entre os meses de janeiro e agosto de 2021. As conversas de um grupo de avisos com cerca de 245 membros foi utilizado para construir a base de respostas padrões do {\itshape chatbot}.
 
-%[...]
+Foi reunido um acervo abrangendo 200 perguntas e classificadas em 10 temas distintos. Para o tema “trancamento de disciplina”, por exemplo, observou-se duas perguntas mais frequentes entre os alunos: qual o período para realizar o procedimento e onde o estudante pode solicitá-lo. Dessa forma, foram elaboradas diversas sentenças que podem responder essas questões e registradas em um arquivo de texto. Esse documento é a base de dados a ser utilizada pela aplicação desenvolvida. A Tabela 2 relaciona algumas das perguntas, respostas mais adequadas e seus respectivos temas.
 
-%\section{Resultados e discussões}
+\begin{table}[h]
+\caption{Perguntas e respostas do {\itshape chatbot}. O sistema encontra a melhor resposta relacionando as palavras-chave encontradas (destacadas em negrito) com as sentenças que contém essas palavras.}
+\label{table:1}
+\begin{tabular}{ |p{4.25cm}|p{5cm}|p{4.25cm}|  }
+ \hline
+Pergunta & Resposta do sistema & Tema\\
+ \hline
+ “Falando em \textbf{email institucional}, esqueci o meu. Como faço pra \textbf{recuperar}?”   & Caso queira \textbf{recuperar} o acesso de seu \textbf{email institucional}, acesse: placeholder.link.com &   Email institucional \\
+ \hline
+ “Sabe se existe possibilidade de \textbf{abrir edital} para \textbf{auxílio} óculos?”   & O novo \textbf{edital} para que você possa solicitar seu \textbf{auxílio} estudantil tem previsão para \textbf{abrir} no dia 01/03 &   Auxílios estudantis \\
+ \hline
+ “Quando vai \textbf{começar} o \textbf{novo semestre}?”   & O \textbf{novo semestre} está previsto para \textbf{começar} no dia 01/02 &   Calendário acadêmico \\
+ \hline
+ “O \textbf{campus} não tá \textbf{aberto} pra resolver pendência nesse \textbf{lockdown} né?"   & Devido ao \textbf{lockdown} por conta da pandemia do covid-19, o \textbf{campus} não está \textbf{aberto}; Mais informações em: placeholder.link.com &   Horários de funcionamento \\
+ 
+ \hline
+\end{tabular}
+\end{table}
 
-%[...]
+Para implementar o {\itshape chatbot} foi utilizada a biblioteca NLKT (do inglês {\itshape Natural Language Toolkit}, ou “Ferramentas de Linguagem Natural”) da linguagem Python. Essa biblioteca é um conjunto de recursos que realizam o processamento de linguagem natural (NLP, sigla em inglês para {\itshape “Natural Language Processing”}) para entender e simular a linguagem humana.
+
+No momento em que o usuário envia sua pergunta ao sistema, as palavras passam pela “tokenização”: processo em que são separadas uma das outras pelas pontuações na sentença e pelos espaços em branco entre as palavras. Esse mesmo processo é feito nas respostas do {\itshape chatbot}. Após isso o programa realiza a “normalização”, que é um conjunto de procedimentos para remover letras maiúsculas e caracteres especiais das palavras. As palavras-chave são identificadas em ambos os textos analisando a frequência de menor ocorrência de cada uma, pois palavras mais raras são as que apresentam maior relevância para o sistema.
+
+Se a sentença digitada pelo usuário contém palavras-chave que correspondem às respostas para os temas, o {\itshape chatbot} exibe a resposta mais adequada (a maior quantidade de palavras-chave iguais às digitadas pelo usuário). Caso contrário, o agente indica que não conseguiu entender a pergunta. Para maximizar as chances da pergunta do usuário ser entendida pelo programa, o ideal é que exista diversas sentenças de resposta para cada tema.
+
+Antes da primeira interação do usuário com o {\itshape chatbot} é exibida uma mensagem de saudação indicando que as palavras “ajuda”, {\itshape “help”} ou “temas” podem ser digitadas a qualquer momento para exibir as áreas de conhecimento do programa. Dessa forma, é esperado que o usuário possa se orientar caso suas perguntas não sejam entendidas ou precise de orientação caso não saiba o que digitar. Além disso, foi implementado um histórico de conversa. As sentenças digitadas pelo usuário e suas respectivas respostas são registradas e exibidas para o usuário durante o funcionamento do programa simulando o funcionamento de aplicativos de mensagens conhecidos, como {\itshape Whatsapp} e {\itshape Telegram}.
+
+A Figura 1 exibe a estrutura lógica de funcionamento do {\itshape chatbot} evidenciando os procedimentos utilizados para processar os textos e identificar a resposta adequada para a pergunta do usuário.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\textwidth]{fig1.png}
+\caption{Fluxograma do processamento do {\itshape chatbot}. Após o usuário realizar uma pergunta, ela é processada por diversas etapas para que sua semântica seja capturada. Esse processo é chamado de “etapa de atenção” do {\itshape chatbot}. Se a pergunta for entendida pelo sistema, ele retornará uma resposta adequada em formato textual. }
+\label{fig:exampleFig1}
+\end{figure}
+
+O {\itshape chatbot} foi executado em uma máquina virtual criada com o {\itshape software VirtualBox}. A máquina possui configurações mínimas de memória e armazenamento de disco, e foi configurada com um Raspberry Pi OS utilizando sistema operacional Debian 64 bits. O {\itshape chatbot} é executado com as versões 3.0 ou superiores do Python. Foi necessária a instalação adicional das bibliotecas NLTK, Numpy e Scikit-learn, assim como os pacotes “punkt” e “wordnet”.
+
+
+\section{Resultados e discussões}
+
+A Figura 2 mostra a interface do programa. No canto inferior esquerdo pode ser visto o campo de inserção de texto, local onde o usuário interage com a ferramenta. À direita está o histórico de {\itshape chat} do sistema, onde são registradas todas as interações com o {\itshape chatbot}. Ao centro está o balão principal de comunicação do sistema, em que é possível visualizar a resposta para a última interação do usuário com a ferramenta.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1\textwidth]{fig2.png}
+\caption{Interface do {\itshape chatbot} “Kinho”. A interface simples foi escolhida propositalmente para direcionar a atenção dos usuários aos campos textuais. No futuro, uma funcionalidade de voz será integrada ao sistema.}
+\label{fig:exampleFig2}
+\end{figure}
+
+Cerca de 200 perguntas foram reunidas para a execução dos testes, onde 50 delas possuem erros ortográficos, caracteres especiais, palavras fora do banco de respostas e números. Durante a execução de cada pergunta no {\itshape chatbot} foram verificadas quantas vezes o programa chegou à resposta adequada, em que momentos apenas uma sentença do banco de respostas foi exibida e se um grande número de perguntas consecutivas interferiu no processamento das requisições.
+
+Os testes realizados pelos desenvolvedores chegaram à conclusão que o programa entende e responde corretamente 98\% das perguntas do usuário em linguagem natural contendo uma ou mais palavras-chave correspondentes no banco de respostas. Perguntas consecutivas de diferentes temas não interferem no processamento do programa, desde que a cada interação seja realizada somente uma pergunta com um tema específico.
+
+O {\itshape chatbot} conseguiu efetivamente remover letras maiúsculas e caracteres especiais das perguntas do usuário. Para o banco de dados, o programa conseguiu entender a separação das respostas em 90\% dos testes e exibiu corretamente a sentença na interface com o usuário. Para evitar a exibição de duas respostas distintas em uma mesma interação, algumas respostas contendo caracteres especiais foram colocadas entre aspas simples, separando-as das demais sentenças. Após isso, a exibição de somente uma resposta por pergunta foi 100\% eficiente.
+
+O processamento das perguntas apresenta limitações em relação a erros ortográficos. Se uma palavra é digitada incorretamente, seja por letras dispostas de forma incorreta, números acompanhando a palavra-chave ou mesmo acentuação inadequada, o programa não consegue relacioná-la com palavras similares no banco de dados.
 
 %\section{Considerações Finais} 
 %[...]
