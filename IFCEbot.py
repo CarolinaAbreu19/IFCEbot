@@ -5,8 +5,10 @@ import string
 import warnings
 warnings.filterwarnings("ignore")
 
-#nltk.download('punkt')   # for first-time use only. Punkt is a Sentence Tokenizer
-#nltk.download('wordnet')    # for first-time use only. WordNet is a large lexical database of English.
+
+# nltk.download('omw-1.4') # for first-time use only.
+# nltk.download('punkt')   # for first-time use only. Punkt is a Sentence Tokenizer
+# nltk.download('wordnet')    # for first-time use only. WordNet is a large lexical database of English.
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
