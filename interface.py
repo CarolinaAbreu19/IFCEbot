@@ -68,6 +68,7 @@ def conversa_com_bot(minha_fala):
         lb2.pack(side=TOP) ##esse label vai pro histórico
         
         lb['text'] = IFCEbot.response(minha_fala) #vai pro balão
+        audio.text_to_voice(minha_fala)
         et.delete(0,END)
 
 def resposta(event): #ação do botão submit
@@ -93,6 +94,7 @@ root.geometry('1110x417')
 root.resizable(width=0, height=0)
 root.title('Chat Bot')
 root.bind('<Return>', resposta)
+root.bind('<Alt_L>', resposta_audio)
 
 mystring =tk.StringVar(root)
 
@@ -130,6 +132,7 @@ bt = tk.Button(root,
                     border=None,
 )                  
 
+# bt.bind('<Return>', resposta)
 bt.bind('<Button-1>', resposta)
 bt.place(x=410, y=390)
 
@@ -144,6 +147,7 @@ bt_audio = tk.Button(root,
 )                  
 
 bt_audio.bind('<Button-1>', resposta_audio)
+
 bt_audio.place(x=520, y=390)
 
 frame = Frame(root,

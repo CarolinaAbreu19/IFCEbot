@@ -1,5 +1,6 @@
 import speech_recognition as sr
 from recorder import Recorder
+import simpleaudio as sa
 import os
 
 
@@ -20,3 +21,9 @@ def voice_to_text():
         except Exception as e:
             print("Exception: "+str(e))
             return "erro"
+
+def text_to_voice(text):
+    wave_obj = sa.WaveObject.from_wave_file(os.path.join('audios', "lepra.wav"))
+    play_obj = wave_obj.play()
+    play_obj.wait_done()
+    pass
