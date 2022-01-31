@@ -57,5 +57,3 @@ Erik Jhones Freitas do Nascimento - erik.jhones06@aluno.ifce.edu.br
 Filipe de Almeida Lira - filipe.almeida.lira04@aluno.ifce.edu.br
 
 Sandro César Silveira Jucá - sandrojuca@ifce.edu.br
-
-Anderson de Castro Lima - anderson@ifce.edu.br
