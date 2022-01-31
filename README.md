@@ -29,7 +29,7 @@ As seguintes bibliotecas são necessárias para executar o projeto:
 Para instalá-las, digite os comandos no terminal:
 
 ```
-sudo apt-get install python3.6-tk
+sudo apt-get install python3-tk
 pip3 install numpy==1.19.5
 pip3 install --user -U nltk==3.6.7
 pip3 install -U scikit-learn==0.24.2
