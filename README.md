@@ -38,6 +38,19 @@ pip3 install SpeechRecognition==3.8.1
 pip3 install simpleaudio==1.0.4
 
 ```
+Caso tenha problemas com a biblioteca `simpleaudio`, execute os seguintes comandos:
+
+```
+sudo apt-get install alsa-utils libasound-dev libportaudio2 libportaudiocpp0 portaudio19-dev -y
+sudo apt-get install pkg-config libcairo2-dev gcc python3-dev libgirepository1.0-dev -y
+sudo apt-get install -y libasound2-dev
+sudo apt-get install python-pyaudio python3-pyaudio -y
+sudo pip3 install --upgrade pip setuptools
+sudo pip3 install gobject PyGObject
+sudo apt install portaudio19-dev python3-pyaudio -y
+sudo apt install portaudio19-dev python-pyaudio -y
+pip3 install PyAudio
+```
 
 * Por fim, descomente as linhas de código do arquivo `IFCEbot.py`:
 
