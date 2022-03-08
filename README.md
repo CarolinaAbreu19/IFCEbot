@@ -1,4 +1,4 @@
-# Chatbot Acadêmico - Kinho
+# Chatbot Acadêmico - Kekinho
 
 Protótipo de chatbot de uso acadêmico. Projetado para embarcar em sistema Linux.
 
